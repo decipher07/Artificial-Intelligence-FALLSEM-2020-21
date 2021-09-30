@@ -2,7 +2,12 @@ from anytree import Node, RenderTree
 from anytree.exporter import DotExporter
 
 def objective_composition_function ( tsp_solution_list, tsp_matrix ):
-    route_length = 0
+    # Considering the Estimated Total Cost Of Path to Goal from the Sequence to 50
+    # f(n) = g(n) + h(n)
+    # g(n) = 50 -> Assume
+    # h(n) = cost so far.
+    
+    route_length = 50
     for i in range(len(tsp_solution_list)):
         route_length += tsp_matrix[tsp_solution_list[i - 1]][tsp_solution_list[i]]
     return route_length

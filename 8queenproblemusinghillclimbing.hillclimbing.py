@@ -101,7 +101,6 @@ def hill_climbing_search ( initial_state ):
         # Explore all children in Search_space
         state = search_space.pop(0)
         
-        print (state)
         # Until we find a goal or we reach the end of the search_space
         if state.is_goal():
             return state 
@@ -116,7 +115,8 @@ def hill_climbing_search ( initial_state ):
                 if ( child.objective_value < current_objective_function ):
                     search_space.append(child)
                     child.set_tree_parent(state)
-                    # current_objective_function = child.objective_value
+                    current_objective_function = child.objective_value
+                    break
     
        
         search_space.sort()
@@ -131,6 +131,9 @@ def main():
     for j in range(8):
         a = random.randint(0,7)
         row_filled_list.append(a)
+    
+    for i in range(8):
+        matrix[row_filled_list[i]][i] = 1
     
     initial_objective_value = attacks_from_queen(row_filled_list)
     

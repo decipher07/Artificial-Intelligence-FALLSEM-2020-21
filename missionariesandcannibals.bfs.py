@@ -116,14 +116,14 @@ def breadth_first_search(initial_state):
 	queue = list()
 	explored = set()
 
-	# Add state to the queue
+	# Add First state to the queue
 	queue.append(initial_state)
 
 	while queue:
-		# Explore all children in this state.
+		# Exploring all children in this state.
 		state = queue.pop(0)
 
-		# Until we find a goal or we reach the end of the queue
+		# Until a goal if found or we reach the end of the queue
 		if state.is_goal():
 			return state
 
@@ -131,8 +131,8 @@ def breadth_first_search(initial_state):
 		children = get_children(state)
 
 		for child in children:
-			if (child not in explored) or (child not in queue):
-				# If child is not explored and not in queue then
+			if (child not in explored) and (child not in queue):
+				# If child of the current state is not explored and not in queue then
 				# Add the child to the queue
 				# And set it's tree parent to current state
 				queue.append(child)
@@ -140,7 +140,7 @@ def breadth_first_search(initial_state):
 	return None
 
 def main():
-	# Initial State
+	# Initial Configuration or State
 	initial_state = State(3,3,'left',0,0)
 
 	breadth_first_search(initial_state)

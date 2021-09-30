@@ -134,16 +134,21 @@ def depth_first_search(initial_state):
 
 
 def main():
-	# Initial State
-	initial_state = State(0, 0, 4, 3, 2, 0 )
-
-	depth_first_search(initial_state)
-
-	print("GRAPHS IS AS FOLLOWS : ")
-	
-	# Printing Graph
-	for pre, fill, node in RenderTree(initial_state.get_tree_node()):
-		print("%s%s" %(pre,node.name))
+    
+    x = int(input("Please Enter the Volume of X Jug : "))
+    y = int(input("Please Enter the Volume of Y Jug : "))
+    z = int(input("Please Enter the Z litres of Water You want : "))
+    
+    # Initial State
+    initial_state = State(0, 0, x, y, z, 0 )
+    
+    depth_first_search(initial_state)
+    
+    print("GRAPHS IS AS FOLLOWS : ")
+    
+    # Printing Graph
+    for pre, fill, node in RenderTree(initial_state.get_tree_node()):
+        print("%s%s" %(pre,node.name))
 
 
 # if called from the command line, call main()

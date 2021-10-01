@@ -131,7 +131,7 @@ def breadth_first_search(initial_state):
 		children = get_children(state)
 
 		for child in children:
-			if (child not in explored) and (child not in queue):
+			if (child not in explored) :
 				# If child of the current state is not explored and not in queue then
 				# Add the child to the queue
 				# And set it's tree parent to current state

@@ -101,14 +101,10 @@ def a_star_algorithm ( initial_state ):
 def main():
     # Initial State
     tsp_matrix = [
-        [0, 20, 30, 10, 11 ],
-        [15, 0, 16, 4, 2 ],
-        [3, 5, 0, 2, 4 ],
-        [19, 6, 18, 0, 3 ],
-        [16, 4, 7, 16, 0]
+        [0, 400, 500, 300],[400, 0, 300, 500],[500, 300, 0, 400],[ 300, 500, 400, 0]
     ]
     
-    initial_solution = [0, 2, 1, 3, 4 ]
+    initial_solution = [0, 2, 1, 3]
     
     initial_objective_value = objective_composition_function(initial_solution, tsp_matrix)
     
